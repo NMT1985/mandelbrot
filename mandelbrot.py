@@ -5,7 +5,6 @@ from numba import njit
 import math
 
 @njit
-('void(uint8[:,:,:], float64, float64, float64, int64, float64)')
 def draw_image(image, start_x, start_y, pixel_size, max_iters, bailout):
     height, width = image.shape[0], image.shape[1]
     for y in range(height):
@@ -57,6 +56,6 @@ pl.figure(dpi=200)
 pl.imshow(image)
 pl.axis("off")
 
-#http://pl.show()
-#from PIL import Image
-#Image.fromarray(image).save('Mandelbrot(Simple).png')
+pl.show()
+from PIL import Image
+Image.fromarray(image).save('Mandelbrot(Simple).png')
